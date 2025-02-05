@@ -1,0 +1,10 @@
+.news {
+    font-size: 2rem;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 2rem;
+}
