@@ -1,6 +1,8 @@
-function App() {
+
+import News from './Components/News'
+const  App =() => {
   return (
-    <div>App</div>
+    <div><News /></div>
   )
 }
 
