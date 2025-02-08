@@ -15,8 +15,11 @@ const News = () => {
           <div className="news-grid">News Grid</div>
         </div>
         <div className="my-blogs">My Blogs</div>
+        <div className="weather-calendar">
         <Weather />
         <Calendar />
+        </div>
+
       </div>
       <footer className="news-footer">Footer</footer>
       </div>
