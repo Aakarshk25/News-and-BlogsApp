@@ -1,89 +1,148 @@
+
 .news {
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: #fff;
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    row-gap: 2rem;
+    row-gap: 1.5rem; /* Reduced row gap for tighter spacing */
 }
 
 .news-header {
     width: 100%;
-    min-height: 7rem;
+    min-height: 6.5rem; /* Slightly reduced header height */
     background-color: #111214;
     border-radius: 1rem 1rem 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3rem; /* Reduced padding */
+}
+
+.logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.8rem; /* Slightly smaller font size */
+    color: #ddd;
+    letter-spacing: 0.1rem;
+}
+
+.search-bar {
+    position: relative;
+}
+
+.search-bar input {
+    width: 24rem; /* Reduced width */
+    height: 3.2rem; /* Reduced height */
+    background-color: #060709;
+    border: none;
+    border-radius: 4rem;
+    padding: 0 2.5rem 0 1.2rem; /* Adjusted padding */
+    color: #ddd;
+    transition: width 0.3s;
+}
+
+.search-bar input:focus {
+    width: 35rem;
+}
+
+.search-bar input:focus::placeholder {
+    color: transparent;
+}
+
+.search-bar button {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    color: #bbb;
+    font-size: 1.8rem;
+    cursor: pointer;
 }
 
 .news-content {
     display: flex;
-    height: calc(100% - 16rem);
-    padding: 0 2rem;
-    gap: 2rem;
+    height: calc(100% - 15rem); /* Reduced height */
+    padding: 0 1.5rem; /* Reduced padding */
+    gap: 1.5rem; /* Reduced gap */
 }
 
 .navbar {
-    width: 18rem;
+    width: 17rem; /* Slightly reduced width */
     height: 100%;
     display: flex;
     flex-direction: column;
-    row-gap: 2rem;
+    row-gap: 1.5rem; /* Reduced row gap */
 }
 
 .user {
     width: 100%;
-    height: 20%;
+    height: 16%;
     background-color: #111214;
     border-radius: 1rem;
+    font-size: 1.5rem; /* Reduced font size */
 }
 
 .categories {
     width: 100%;
-    height: calc(80% - 2rem);
+    height: calc(84% - 1.5rem); /* Adjusted height */
     background-color: #111214;
     border-radius: 1rem;
+    font-size: 1.5rem; /* Consistent font size */
+    padding: 0.8rem; /* Reduced padding */
 }
 
 .news-section {
-    width: clamp(30rem, 43cqi, 40%);
+    width: clamp(28rem, 42cqi, 38%);
     height: 100%;
     border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Reduced gap */
 }
 
 .headline {
     width: 100%;
-    height: calc(50% - 2rem);
+    height: 45%; /* Slightly reduced height */
     background-color: #111214;
     border-radius: 1rem;
-    margin-bottom: 2rem;
+    font-size: 1.7rem; /* Slightly reduced font size */
 }
 
 .news-grid {
     width: 100%;
-    height: 50%;
+    height: 50%; /* Slightly reduced height */
     background-color: #222;
     border-radius: 1rem;
+    font-size: 1.5rem; /* Reduced font size */
 }
 
 .my-blogs {
-    width: clamp(20rem, 27cqi, 28%);
+    width: clamp(18rem, 26cqi, 26%);
     height: 100%;
     background-color: #222;
     border-radius: 1rem;
+    font-size: 1.5rem; /* Consistent font size */
 }
 
 .weather-calendar {
     flex: 1;
     display: flex;
     flex-direction: column;
-    row-gap: 2rem;
+    row-gap: 1.5rem; /* Reduced gap */
+    font-size: 1.5rem; /* Consistent font size */
 }
 
 .news-footer {
     width: 100%;
-    min-height: 5rem;
+    min-height: 4.5rem; /* Slightly reduced footer height */
     background-color: #111214;
     border-radius: 0 0 1rem 1rem;
+    font-size: 1.3rem; /* Reduced font size */
+    color: #bbb;
 }
+
 
