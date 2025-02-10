@@ -1,8 +1,8 @@
-
+import './Calendar.css'
 
 const Calendar = () => {
   return (
-    <div>Calendar</div>
+    <div className='calendar'>Calendar</div>
   )
 }
 
