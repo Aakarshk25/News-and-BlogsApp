@@ -27,12 +27,12 @@ const News = () => {
       <div className="news-content">
         <div className="navbar">
           <div className="user">
-            <img src={userImg} alt=" User Image" />
+            <img src={userImg} alt="User Image" />
             <p>Aakarsh Blog</p>
           </div>
           <nav className="categories">
             <h1 className="nav-heading">Catogaries</h1>
-            <div className="nav-link">
+            <div className="nav-links">
               <a href="#" className="nav-link">
                 General
               </a>
