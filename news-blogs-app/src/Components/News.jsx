@@ -1,15 +1,36 @@
+import { useEffect,useState } from "react";
 import Weather from "./Weather";
 import Calendar from "./Calendar";
 import "./News.css";
 import userImg from "../assets/images/user.jpg";
-import techImg from "../assets/images/tech.jpg";
-import sportsImg from "../assets/images/sports.jpg";
-import scienceImg from "../assets/images/science.jpg";
-import worldImg from "../assets/images/world.jpg";
-import healthImg from "../assets/images/health.jpg";
-import nationImg from "../assets/images/nation.jpg";
+import noImg from "../assets/images/no-img.png";
+import axios from 'axios'
+
 
 const News = () => {
+  const [headline,setHeadline] = useState(null)
+  const [news,setNews] = useState([])
+
+  useEffect(() => {
+    const fetchNews = async() => {
+      // const url = 'https://gnews.io/api/v4/top-headlines?category=general&lang=hi&apikey=d2ba8216c37ec9feb24d2836026c7a79'
+      const url = 'https://gnews.io/api/v4/top-headlines?category=general&lang=en&apikey=d2ba8216c37ec9feb24d2836026c7a79'
+      const response = await axios.get(url)
+      const fetchedNews  = response.data.articles
+
+      fetchNews.forEach[(article)=>{
+        if(!article.image){
+          article.image=noImg
+        }
+    }]
+
+      setHeadline(fetchedNews[0])
+      setNews(fetchedNews.slice(1,7))
+      console.log(news)
+    }
+    fetchNews()
+  },[])
+
   return (
     <div className="news">
       <header className="news-header">
@@ -64,57 +85,24 @@ const News = () => {
           </nav>
         </div>
         <div className="news-section">
-          <div className="headline">
-            <img src={techImg} alt="Headline Image" />
+          {headline && ( <div className="headline">
+            <img src={headline.image || noImg} alt= {headline.title} />
             <h2 className="headline-title">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Obcaecati, velit!{" "}
+               {headline.title}
               <i className="fa-regular fa-bookmark bookmark"></i>
             </h2>
-          </div>
+          </div>)}
+         
 
           <div className="news-grid">
-            <div className="news-grid-item">
-              <img src={techImg} alt="" />
-              <h3>Lorem ipsum dolor sit amet.
+            {news.map((article,index)=> (
+              <div key={index} className="news-grid-item">
+              <img src={article.image || noImg}  alt={article.title} />
+              <h3>{article.title}
               <i className="fa-regular fa-bookmark bookmark"></i>
               </h3>
             </div>
-            <div className="news-grid-item">
-              <img src={sportsImg} alt="" />
-              <h3>Lorem ipsum dolor sit amet.
-              <i className="fa-regular fa-bookmark bookmark"></i>
-              </h3>
-            </div>
-
-            <div className="news-grid-item">
-              <img src={scienceImg} alt="" />
-              <h3>Lorem ipsum dolor sit amet.
-              <i className="fa-regular fa-bookmark bookmark"></i>
-              </h3>
-            </div>
-
-            <div className="news-grid-item">
-              <img src={worldImg} alt="" />
-              <h3>Lorem ipsum dolor sit amet.
-              <i className="fa-regular fa-bookmark bookmark"></i>
-              </h3>
-            </div>
-
-            <div className="news-grid-item">
-              <img src={healthImg} alt="" />
-              <h3>Lorem ipsum dolor sit amet.
-              <i className="fa-regular fa-bookmark bookmark"></i>
-              </h3>
-            </div>
-
-            <div className="news-grid-item">
-              <img src={nationImg} alt="" />
-              <h3>Lorem ipsum dolor sit amet.
-              <i className="fa-regular fa-bookmark bookmark"></i>
-              </h3>
-            </div>
-
+            ))}
           </div>
         </div>
         <div className="my-blogs">My Blogs</div>
