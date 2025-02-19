@@ -18,18 +18,18 @@ const News = () => {
       const response = await axios.get(url)
       const fetchedNews  = response.data.articles
 
-      fetchNews.forEach[(article)=>{
+      fetchedNews.forEach((article)=>{
         if(!article.image){
           article.image=noImg
         }
-    }]
+    });
 
       setHeadline(fetchedNews[0])
       setNews(fetchedNews.slice(1,7))
       console.log(news)
     }
-    fetchNews()
-  },[])
+    fetchNews();
+  }, []);
 
   return (
     <div className="news">
