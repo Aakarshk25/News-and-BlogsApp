@@ -5,6 +5,7 @@ import "./News.css";
 import userImg from "../assets/images/user.jpg";
 import noImg from "../assets/images/no-img.png";
 import axios from "axios";
+import  NewsModel  from "./NewsModel";
 
 const categories = [
   "general",
@@ -130,6 +131,7 @@ const News = () => {
             ))}
           </div>
         </div>
+        <NewsModel />
         <div className="my-blogs">My Blogs</div>
         <div className="weather-calendar">
           <Weather />

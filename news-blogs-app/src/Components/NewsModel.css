@@ -1,0 +1,145 @@
+/* .model-overlay{
+    position: fixed;
+    inset:0;
+    background-color: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.model-content{
+    width: 90%;
+    max-width: 60rem;
+
+} */
+
+/* NewsModel.css */
+
+.model-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .model-content {
+    width: 90%;
+    max-width: 60rem;
+    background: #ffffffbe;
+    border-radius: 1rem;
+    overflow: hidden;
+    padding: 2rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 2rem;
+    color: #555;
+    cursor: pointer;
+    border: none;
+    background: none;
+    outline: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+  
+  .close-button:hover {
+    background-color: #ff4d4d;
+    color: white;
+    transform: scale(1.1);
+  }
+  
+  
+  .model-content img {
+    width: 100%;
+    max-height: 25rem;
+    object-fit: cover;
+    border-radius: 0.8rem;
+  }
+  
+  .modal-title {
+    font-size: 2rem;
+    color: #333;
+    margin: 1.5rem 0 1rem;
+    font-weight: bold;
+  }
+  
+  .modal-source {
+    font-size: 1.2rem;
+    color: #555;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  
+  .modal-date {
+    font-size: 1.1rem;
+    color: #777;
+    margin-bottom: 1.5rem;
+  }
+  
+  .modal-content-text {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 2rem;
+  }
+  
+  .read-more-link {
+    display: inline-block;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #0078d7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .read-more-link:hover {
+    color: #005bb5;
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .model-content {
+      width: 95%;
+      padding: 1.5rem;
+    }
+  
+    .modal-title {
+      font-size: 1.8rem;
+    }
+  
+    .modal-content-text {
+      font-size: 1.2rem;
+    }
+  
+    .read-more-link {
+      font-size: 1.3rem;
+    }
+  }
+  
