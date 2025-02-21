@@ -1,5 +1,7 @@
-import demoImg from "../assets/images/demo.jpg";
+// import demoImg from "../assets/images/demo.jpg";
 import "./NewsModel.css";
+import './Modal.css'
+
 
 const NewsModel = ({ show, article, onClose }) => {
   if (!show) {
