@@ -1,24 +1,43 @@
 import demoImg from "../assets/images/demo.jpg";
-import './NewsModel.css'
-export const NewsModel = () => {
+import "./NewsModel.css";
+
+const NewsModel = ({ show, article, onClose }) => {
+  if (!show) {
+    return null;
+  }
+
   return (
     <div className="model-overlay">
       <div className="model-content">
-        <span className="close-button">
-          <i className="fa-solid fa-xmark"> </i>
+        <span className="close-button" onClick={onClose}>
+          <i className="fa-solid fa-xmark"></i>
         </span>
-        <img src={demoImg} alt="Model Image" />
-        <h2 className="modal-title">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis,
-          accusamus.
-        </h2>
-        <p className="modal-source">Source the guradian</p>
-        <p className="modal-date">Feb 24, 2025, 04:15</p>
-        <p className="modal-content-text">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti
-          magnam laudantium blanditiis beatae quisquam eveniet.
-        </p>
-        <a href="#" className="read-more-link">Read more...</a>
+        {article && (
+          <>
+            <img src={article.image} alt={article.title} className="Modal Image" />
+            <h2 className="modal-title">
+              {article.title}
+            </h2>
+            <p className="modal-source">Source: {article.source.name}</p>
+            <p className="modal-date">{new Date(article.publishedAt).
+            toLocaleString('en-IN',{
+              month:'short',
+              day:'2-digit',
+              year:'numeric',
+              hour:'2-digit',
+              minute:'2-digit'
+            })}
+            </p>
+            <p className="modal-content-text">
+            {article.content}
+            </p>
+            <a href={article.url} target="_blank"
+            rel="noopener noreferrer"
+            className="read-more-link">
+              Read more...
+            </a>
+          </>
+        )}
       </div>
     </div>
   );
